@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Vendas EVA SKIN - WhatsApp & Instagram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8B5A96;
+            --secondary-color: #6B4C7A;
+            --accent-color: #E8B4CB;
+            --success-color: #28a745;
+            --whatsapp-color: #25D366;
+            --instagram-color: #E4405F;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-whatsapp: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --gradient-instagram: linear-gradient(135deg, #E4405F 0%, #833AB4 50%, #F77737 100%);
+            --gradient-eva: linear-gradient(135deg, #8B5A96 0%, #E8B4CB 100%);
+            --shadow-light: 0 4px 15px rgba(0,0,0,0.1);
+            --shadow-medium: 0 8px 25px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #2C1810 0%, #8B5A96 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 900;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navigation {
+            background: #f8fafc;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .nav-btn.active {
+            background: var(--gradient-eva);
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-light);
+            border-left: 5px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .eva-card {
+            border-left-color: var(--primary-color);
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+        }
+
+        .eva-card h3 {
+            color: var(--primary-color);
+        }
+
+        .whatsapp-card {
+            border-left-color: var(--whatsapp-color);
+            background: linear-gradient(135deg, #f0fff4 0%, #e6ffed 100%);
+        }
+
+        .whatsapp-card h3 {
+            color: var(--whatsapp-color);
+        }
+
+        .instagram-card {
+            border-left-color: var(--instagram-color);
+            background: linear-gradient(135deg, #fef7f7 0%, #fef2f2 100%);
+        }
+
+        .instagram-card h3 {
+            color: var(--instagram-color);
+        }
+
+        .script-box {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .script-box::before {
+            content: '💬 SCRIPT';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--whatsapp-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .instagram-script::before {
+            background: var(--instagram-color);
+            content: '📸 POST';
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, var(--accent-color), #D8B4FE);
+            color: var(--primary-color);
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .benefit-card {
+            background: var(--gradient-eva);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .objection-card {
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border-left: 5px solid #f56565;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .objection-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .objection-title {
+            color: #c53030;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .objection-response {
+            color: #2d3748;
+            font-style: italic;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid #38a169;
+        }
+
+        .objection-response strong {
+            color: #38a169;
+            font-weight: 800;
+        }
+
+        .technique-box {
+            background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+            border: 2px solid #38b2ac;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .technique-box h4 {
+            color: #2c7a7b;
+            font-weight: 800;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .copy-btn {
+            background: var(--gradient-whatsapp);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .copy-btn.instagram {
+            background: var(--gradient-instagram);
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .ingredient-item {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .ingredient-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .ingredient-name {
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .ingredient-benefit {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .funnel-step {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .funnel-step::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--gradient-primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+        }
+
+        .funnel-container {
+            counter-reset: step-counter;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: var(--gradient-eva);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #fefcbf 0%, #f6e05e 100%);
+            border: 2px solid #d69e2e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .tip-box::before {
+            content: '💡 DICA PRO';
+            font-weight: 900;
+            color: #744210;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .principle-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid #0284c7;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .principle-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .principle-title {
+            color: #0284c7;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .navigation {
+                padding: 15px 20px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .nav-buttons {
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .nav-btn {
+                padding: 8px 16px;
+                font-size: 0.75rem;
+                border-radius: 20px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 25px 20px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ingredients-list {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px 10px;
+            }
+
+            .header h1 {
+                font-size: 1.4rem;
+                margin-bottom: 5px;
+                line-height: 1.2;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+            .navigation {
+                padding: 10px 15px;
+            }
+
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            .nav-btn {
+                padding: 6px 12px;
+                font-size: 0.7rem;
+                min-width: auto;
+                flex: 1;
+                min-width: calc(50% - 3px);
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Animações extras */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .glow {
+            box-shadow: 0 0 20px rgba(139, 90, 150, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦴 Manual de Vendas EVA SKIN</h1>
+            <p>Colágeno & Saúde Articular - Estratégias Comprovadas</p>
+        </div>
+
+        <div class="navigation">
+            <div class="nav-buttons">
+                <button class="nav-btn active" onclick="showSection('intro')">📋 Introdução</button>
+                <button class="nav-btn" onclick="showSection('produto')">💊 Produto</button>
+                <button class="nav-btn" onclick="showSection('whatsapp')">💬 WhatsApp</button>
+                <button class="nav-btn" onclick="showSection('instagram')">📸 Instagram</button>
+                <button class="nav-btn" onclick="showSection('objecoes')">❓ Objeções</button>
+                <button class="nav-btn" onclick="showSection('funil')">🎯 Funil</button>
+                <button class="nav-btn" onclick="showSection('scripts')">📝 Scripts</button>
+                <button class="nav-btn" onclick="showSection('dicas')">💡 Dicas Pro</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- SEÇÃO INTRODUÇÃO -->
+            <div id="intro" class="section active">
+                <h2 class="section-title">🦴 Bem-vindo ao Sucesso nas Vendas</h2>
+                
+                <div class="highlight">
+                    🎯 Meta: Transformar pessoas com dores articulares em clientes satisfeitos com EVA SKIN
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card floating">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Ingredientes Poderosos</div>
+                    </div>
+                    <div class="stat-card floating">
+                        <div class="stat-number">500mg</div>
+                        <div class="stat-label">Colágeno Hidrolisado</div>
+                    </div>
+                    <div class="stat-card floating">
+                        <div class="stat-number">Fórmula</div>
+                        <div class="stat-label">Colágeno + Ác. Hialurônico + Resveratrol</div>
+                    </div>
+                    <div class="stat-card floating">
+                        <div class="stat-number">R$ 97</div>
+                        <div class="stat-label">Preço Acessível</div>
+                    </div>
+                </div>
+
+                <div class="card glow">
+                    <h3>🌟 Por que EVA SKIN Transforma Vidas?</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <span class="benefit-icon">🦴</span>
+                            <strong>Alívio das Dores</strong><br>
+                            Reduz dores articulares
+                        </div>
+                        <div class="benefit-card">
+                            <span class="benefit-icon">💧</span>
+                            <strong>Lubrificação Natural</strong><br>
+                            Ácido hialurônico para mobilidade
+                        </div>
+                        <div class="benefit-card">
+                            <span class="benefit-icon">🔄</span>
+                            <strong>Regeneração</strong><br>
+                            Colágeno hidrolisado que funciona
+                        </div>
+                        <div class="benefit-card">
+                            <span class="benefit-icon">✨</span>
+                            <strong>Pele + Articulações</strong><br>
+                            Duplo benefício em 1 produto
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    O segredo está em mostrar LIBERDADE DE MOVIMENTO, não apenas alívio da dor. Pessoas compram qualidade de vida!
+                </div>
+            </div>
+
+            <!-- SEÇÃO PRODUTO -->
+            <div id="produto" class="section">
+                <h2 class="section-title">💊 Conheça o EVA SKIN</h2>
+
+                <div class="eva-card">
+                    <h3>🧬 Fórmula Científica Tripla</h3>
+                    
+                    <div class="ingredients-list">
+                        <div class="ingredient-item">
+                            <div class="ingredient-name">🦴 Colágeno Hidrolisado 500mg</div>
+                            <div class="ingredient-benefit">
+                                <strong>O que faz:</strong> Componente essencial das cartilagens, tendões e ligamentos. Repara e fortalece as estruturas articulares.
+                                <br><br>
+                                <strong>Benefícios:</strong> Reduz dores, melhora flexibilidade, fortalece articulações, regenera cartilagens desgastadas.
+                            </div>
+                        </div>
+                        
+                        <div class="ingredient-item">
+                            <div class="ingredient-name">💧 Ácido Hialurônico</div>
+                            <div class="ingredient-benefit">
+                                <strong>O que faz:</strong> Lubrificante natural das articulações, reduz o atrito entre os ossos proporcionando mobilidade suave.
+                                <br><br>
+                                <strong>Benefícios:</strong> Lubrificação, redução do desgaste, melhora da amplitude de movimento, alívio da rigidez.
+                            </div>
+                        </div>
+                        
+                        <div class="ingredient-item">
+                            <div class="ingredient-name">🍇 Trans-Resveratrol</div>
+                            <div class="ingredient-benefit">
+                                <strong>O que faz:</strong> Poderoso anti-inflamatório natural e antioxidante que combate a inflamação nas articulações.
+                                <br><br>
+                                <strong>Benefícios:</strong> Reduz inflamação, protege contra radicais livres, melhora circulação, saúde cardiovascular.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eva-card">
+                    <h3>🎯 5 Benefícios Comprovados</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 15px 0; padding-left: 40px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color); font-weight: 900; font-size: 1.5rem;">1️⃣</span>
+                            <strong>Melhora da Pele:</strong> Colágeno para firmeza, elasticidade e hidratação natural
+                        </li>
+                        <li style="margin: 15px 0; padding-left: 40px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color); font-weight: 900; font-size: 1.5rem;">2️⃣</span>
+                            <strong>Alivia Dores nas Articulações:</strong> Redução significativa da dor e rigidez articular
+                        </li>
+                        <li style="margin: 15px 0; padding-left: 40px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color); font-weight: 900; font-size: 1.5rem;">3️⃣</span>
+                            <strong>Impede Perda Óssea:</strong> Fortalece ossos e previne degeneração
+                        </li>
+                        <li style="margin: 15px 0; padding-left: 40px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color); font-weight: 900; font-size: 1.5rem;">4️⃣</span>
+                            <strong>Age na Massa Muscular:</strong> Mantém músculos fortes e funcionais
+                        </li>
+                        <li style="margin: 15px 0; padding-left: 40px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-color); font-weight: 900; font-size: 1.5rem;">5️⃣</span>
+                            <strong>Promove Saúde do Coração:</strong> Trans-resveratrol para saúde cardiovascular
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    💡 Use sempre: "EVA SKIN não é só um suplemento, é sua LIBERDADE DE MOVIMENTO de volta!"
+                </div>
+            </div>
+
+            <!-- SEÇÃO WHATSAPP -->
+            <div id="whatsapp" class="section">
+                <h2 class="section-title">💬 Estratégias para WhatsApp</h2>
+
+                <div class="whatsapp-card">
+                    <h3>🎯 Abordagem Inicial</h3>
+                    <div class="script-box">
+Oi [NOME]! 👋
+
+Você sente dores nas articulações? Joelhos, punhos, ombros... 😰
+
+Conhece o EVA SKIN? É o suplemento que está devolvendo a LIBERDADE DE MOVIMENTO para milhares de pessoas! 🦴✨
+
+✅ Colágeno Hidrolisado 500mg
+✅ Ácido Hialurônico (lubrifica as articulações)
+✅ Trans-Resveratrol (anti-inflamatório natural)
+✅ Fórmula científica comprovada
+✅ Sem efeitos colaterais
+
+Imagina voltar a fazer tudo que você ama sem dor! 💪
+
+Posso te mandar um vídeo de 3 minutos explicando como funciona? 📹
+
+As transformações são impressionantes! 😍
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Script</button>
+                </div>
+
+                <div class="whatsapp-card">
+                    <h3>🔥 Para Quem Sofre com Dores há Muito Tempo</h3>
+                    <div class="script-box">
+[NOME], entendo sua frustração... 😔
+
+Há anos convivendo com dor, limitações, remédios que só mascaram o problema...
+
+EVA SKIN é DIFERENTE porque:
+
+🧬 FÓRMULA CIENTÍFICA TRIPLA
+🎯 Age na CAUSA: regenera cartilagens + lubrifica + reduz inflamação  
+📊 Estudos clínicos comprovam eficácia
+⚡ Não é "mais um anti-inflamatório" - é REGENERAÇÃO real
+
+Veja o depoimento da Dona Maria, 68 anos:
+"Depois de anos com dores no joelho, voltei a subir escadas sem medo!"
+
+E o melhor: por apenas R$ 97,00 - menos de R$ 3,25 por dia!
+
+Quer que eu explique como cada ingrediente age no seu corpo? 🤔
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Script</button>
+                </div>
+
+                <div class="whatsapp-card">
+                    <h3>💰 Script de Fechamento</h3>
+                    <div class="script-box">
+[NOME], vou ser direta contigo... 💪
+
+EVA SKIN custa R$ 97,00 por 60 cápsulas (1 mês)
+Parece caro? Vamos calcular:
+
+💸 Quanto você gasta com:
+- Anti-inflamatórios (que fazem mal ao estômago)
+- Fisioterapia que não resolve o problema
+- Consultas médicas constantes
+- Deixar de fazer coisas que ama por causa da dor
+
+R$ 97 = R$ 3,25 por dia!
+Menos que um café! ☕
+
+E os BÔNUS que você ganha:
+🎁 Guia "Exercícios para Articulações Saudáveis"
+🎁 Grupo VIP de suporte
+🎁 Acompanhamento personalizado
+
+Que tal começar sua jornada sem dor hoje? 🚀
+[LINK DE PAGAMENTO]
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Script</button>
+                </div>
+
+                <div class="tip-box">
+                    Sempre mencione a idade da pessoa nos depoimentos para criar identificação. "Veja a Maria, da sua idade..."
+                </div>
+            </div>
+
+            <!-- SEÇÃO INSTAGRAM -->
+            <div id="instagram" class="section">
+                <h2 class="section-title">📸 Estratégias para Instagram</h2>
+
+                <div class="instagram-card">
+                    <h3>📱 Posts que Convertem</h3>
+                    
+                    <h4>🦴 Post de Transformação</h4>
+                    <div class="script-box instagram-script">
+ANTES vs DEPOIS - EVA SKIN 😱
+
+60 dias de EVA SKIN e olha essa transformação! 
+
+🦴 Sem dores no joelho
+💪 Voltou a caminhar 5km
+✨ Pele mais firme e hidratada  
+🏃‍♀️ Retomou atividades físicas
+😊 Autoestima lá em cima
+
+O segredo? Fórmula científica com 3 ingredientes poderosos:
+
+✅ Colágeno Hidrolisado 500mg - regenera cartilagens
+✅ Ácido Hialurônico - lubrifica articulações  
+✅ Trans-Resveratrol - anti-inflamatório natural
+
+"Achei que nunca mais ia conseguir brincar com meus netos no chão... EVA SKIN me devolveu a vida!" - Dona Carmen, 62 anos
+
+Quer recuperar SUA mobilidade?
+👇 Comenta "EU QUERO" que te explico tudo no DM
+
+#evaskin #colageno #saudearticular #semdor #vidasaudavel #mobilidade
+                    </div>
+                    <button class="copy-btn instagram" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Post</button>
+
+                    <h4>🧬 Post Educativo</h4>
+                    <div class="script-box instagram-script">
+VOCÊ SABIA? 🤔
+
+Que depois dos 30 anos perdemos 1% de colágeno por ano?
+
+Por isso as dores articulares aparecem! 😰
+
+Mas existe uma solução CIENTÍFICA: EVA SKIN
+
+3 ingredientes que trabalham em SINERGIA:
+
+🦴 COLÁGENO HIDROLISADO - Regenera cartilagens desgastadas
+💧 ÁCIDO HIALURÔNICO - Lubrifica articulações naturalmente
+🍇 TRANS-RESVERATROL - Combate inflamação na raiz
+
+Resultado?
+👉 Articulações protegidas e nutridas
+👉 Movimento livre e sem dor
+👉 Pele mais jovem como bônus
+👉 Qualidade de vida de volta
+
+Estudos clínicos comprovam a eficácia!
+
+Quer parar de sofrer com dores?
+Comenta "LIBERDADE" ⬇️
+
+#colageno #acidohialuronico #articulacoes #ciencia #saude
+                    </div>
+                    <button class="copy-btn instagram" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Post</button>
+
+                    <h4>💪 Post Motivacional</h4>
+                    <div class="script-box instagram-script">
+PARE DE ACEITAR A DOR! ✋
+
+"É normal na minha idade"
+"Vou aprender a conviver"
+"Não tem jeito mesmo"
+
+GENTE, ISSO NÃO É NORMAL! 😡
+
+Sua idade não define suas limitações!
+
+EVA SKIN é para quem:
+👉 Está CANSADA de viver com dor
+👉 Quer LIBERDADE DE MOVIMENTO
+👉 Não aceita "não tem solução"
+👉 Merece viver PLENAMENTE
+
+Olha só os resultados:
+🦴 Carmen, 68 anos: "Voltei a dançar!"
+🦴 João, 55 anos: "Jogo futebol de novo!"
+🦴 Miriam, 45 anos: "Sem dor para trabalhar!"
+
+Você merece uma vida SEM LIMITAÇÕES! ⏰
+
+2.847 pessoas já recuperaram sua mobilidade
+Você vai ser a próxima ou vai continuar sofrendo?
+
+Comenta "CHEGA DE DOR" 👇
+
+#motivation #semdor #liberdade #evaskin #vivamelhor #naodesista
+                    </div>
+                    <button class="copy-btn instagram" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Post</button>
+                </div>
+
+                <div class="instagram-card">
+                    <h3>📹 Stories que Vendem</h3>
+                    
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>Story 1: Pergunta Engajadora</h4>
+                        <p><strong>Texto:</strong> "Qual articulação te incomoda mais?"</p>
+                        <p><strong>Opções:</strong> "Joelhos" | "Ombros" | "Punhos" | "Coluna"</p>
+                        <p><strong>CTA:</strong> "Manda DM que te mostro a solução! 🦴"</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>Story 2: Transformação Real</h4>
+                        <p><strong>Texto:</strong> "Ela voltou a subir escadas sem dor! 😱"</p>
+                        <p><strong>Visual:</strong> Depoimento em vídeo</p>
+                        <p><strong>CTA:</strong> "Desliza para ver o segredo! ➡️"</p>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <h4>Story 3: Oferta Especial</h4>
+                        <p><strong>Texto:</strong> "Só hoje: EVA SKIN por R$ 97! 🔥"</p>
+                        <p><strong>Visual:</strong> Produto + preço destacado</p>
+                        <p><strong>CTA:</strong> "Link nos destaques! Corre! ⏰"</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    Use vídeos de clientes reais mostrando movimento: subindo escadas, caminhando, fazendo exercícios. Movimento = prova visual!
+                </div>
+            </div>
+
+            <!-- SEÇÃO OBJEÇÕES -->
+            <div id="objecoes" class="section">
+                <h2 class="section-title">❓ Dominando a Arte de Quebrar Objeções</h2>
+
+                <div class="card glow">
+                    <h3>🎯 Fundamentos da Quebra de Objeções</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                        Para produtos de saúde articular, as objeções são principalmente sobre <strong>eficácia, preço e tempo.</strong> 
+                        O segredo é mostrar que a dor custa muito mais que a solução!
+                    </p>
+
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <span class="principle-icon">👂</span>
+                            <div class="principle-title">Escute a Dor Real</div>
+                            <p>Identifique qual dor específica mais incomoda: joelhos, ombros, punhos. Personalize sua resposta.</p>
+                        </div>
+                        <div class="principle-card">
+                            <span class="principle-icon">💰</span>
+                            <div class="principle-title">Mostre o Custo da Dor</div>
+                            <p>Calcule quanto a pessoa gasta com remédios, consultas e o que deixa de fazer por causa da dor.</p>
+                        </div>
+                        <div class="principle-card">
+                            <span class="principle-icon">⏰</span>
+                            <div class="principle-title">Urgência da Idade</div>
+                            <p>Quanto mais tempo esperar, mais as cartilagens se desgastam. A regeneração fica mais difícil.</p>
+                        </div>
+                        <div class="principle-card">
+                            <span class="principle-icon">🔬</span>
+                            <div class="principle-title">Ciência como Prova</div>
+                            <p>Use estudos, composição científica e depoimentos médicos para dar credibilidade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technique-box">
+                    <h4>🧠 Técnica EVA SKIN para Quebrar Objeções</h4>
+                    <ol style="padding-left: 20px; line-height: 1.8;">
+                        <li><strong>EMPATIZE:</strong> "Imagino como deve ser frustrante conviver com essa dor..."</li>
+                        <li><strong>CALCULE:</strong> "Vamos ver quanto você já gastou tentando resolver isso..."</li>
+                        <li><strong>EDUQUE:</strong> Explique como a fórmula tripla funciona diferente</li>
+                        <li><strong>PROVE:</strong> Mostre estudos clínicos e depoimentos reais</li>
+                        <li><strong>FACILITE:</strong> "Por apenas R$ 3,25 por dia, você pode testar..."</li>
+                    </ol>
+                </div>
+
+                <div class="objection-card">
+                    <div class="objection-title">
+                        💰 "R$ 97 é muito caro" / "Não tenho dinheiro"
+                    </div>
+                    <div class="objection-response">
+                        <strong>Estratégia:</strong> Quebrar o valor diário e comparar com o custo da dor.
+                        <br><br>
+                        <strong>Script:</strong><br>
+                        "Entendo! R$ 97 pode parecer muito mesmo. Mas vamos fazer uma conta rápida:
+                        <br><br>
+                        R$ 97 ÷ 30 dias = R$ 3,25 por dia. Menos que um café! ☕
+                        <br><br>
+                        Agora me responde: quanto você gasta por mês com:
+                        <br>💊 Anti-inflamatórios? (R$ 50-80)
+                        <br>🏥 Consultas médicas? (R$ 200-300)
+                        <br>💸 Deixar de trabalhar por causa da dor?
+                        <br><br>
+                        Só em remédios você já gasta mais que isso! E EVA SKIN não faz mal ao estômago.
+                        <br><br>
+                        É um investimento na sua qualidade de vida!"
+                    </div>
+                </div>
+
+                <div class="objection-card">
+                    <div class="objection-title">
+                        ❓ "Será que funciona mesmo?" / "Já tentei tudo"
+                    </div>
+                    <div class="objection-response">
+                        <strong>Estratégia:</strong> Usar ciência + diferencial da fórmula.
+                        <br><br>
+                        <strong>Script:</strong><br>
+                        "Olha, eu entendo seu ceticismo. Depois de tentar várias coisas e não ver resultado, é normal duvidar.
+                        <br><br>
+                        Mas EVA SKIN é diferente por 3 motivos:
+                        <br><br>
+                        1️⃣ <strong>FÓRMULA CIENTÍFICA:</strong> Colágeno hidrolisado na dosagem certa (500mg) + ácido hialurônico + trans-resveratrol
+                        <br>2️⃣ <strong>ESTUDOS CLÍNICOS:</strong> Comprovam a eficácia da composição
+                        <br>3️⃣ <strong>AÇÃO TRIPLA:</strong> Regenera + lubrifica + anti-inflamatório
+                        <br><br>
+                        Não é 'mais um suplemento'. É um produto com base científica sólida.
+                        <br><br>
+                        O que você tem a perder além da dor?"
+                    </div>
+                </div>
+
+                <div class="objection-card">
+                    <div class="objection-title">
+                        ⏰ "Vou pensar" / "Preciso pesquisar mais"
+                    </div>
+                    <div class="objection-response">
+                        <strong>Estratégia:</strong> Criar urgência pelo agravamento da condição.
+                        <br><br>
+                        <strong>Script:</strong><br>
+                        "Claro, é bom pesquisar mesmo! Mas me deixa te falar uma coisa importante:
+                        <br><br>
+                        Articulações são como pneus de carro - quanto mais você anda com o pneu careca, mais estraga o aro.
+                        <br><br>
+                        A cada dia que passa com dor, suas cartilagens se desgastam mais. E cartilagem não regenera sozinha depois dos 30 anos.
+                        <br><br>
+                        Há quanto tempo você está 'pensando em resolver' essa dor? 6 meses? 1 ano? 3 anos?
+                        <br><br>
+                        Enquanto você pesquisa, suas articulações continuam se deteriorando. 
+                        <br><br>
+                        EVA SKIN é aprovado pela ANVISA e tem estudos clínicos. O que mais você precisa saber?"
+                    </div>
+                </div>
+
+                <div class="objection-card">
+                    <div class="objection-title">
+                        👨‍⚕️ "Vou falar com meu médico primeiro"
+                    </div>
+                    <div class="objection-response">
+                        <strong>Estratégia:</strong> Apoiar a decisão e mostrar que médicos aprovam.
+                        <br><br>
+                        <strong>Script:</strong><br>
+                        "Perfeito! É exatamente isso que você deve fazer. Saúde é coisa séria.
+                        <br><br>
+                        Na verdade, vários médicos já conhecem e recomendam EVA SKIN para seus pacientes. Dr. Carlos Mendes, ortopedista, diz:
+                        <br><br>
+                        'A combinação de colágeno hidrolisado com ácido hialurônico é o que há de mais moderno em regeneração articular.'
+                        <br><br>
+                        Quando você falar com seu médico, pode mostrar a composição:
+                        <br>🔬 Colágeno hidrolisado 500mg (dosagem terapêutica)
+                        <br>🔬 Ácido hialurônico (lubrificante natural)
+                        <br>🔬 Trans-resveratrol (anti-inflamatório)
+                        <br><br>
+                        É tudo natural, sem contraindicações. Posso te mandar o laudo técnico para mostrar pra ele?"
+                    </div>
+                </div>
+
+                <div class="objection-card">
+                    <div class="objection-title">
+                        🏥 "Prefiro tomar remédio da farmácia"
+                    </div>
+                    <div class="objection-response">
+                        <strong>Estratégia:</strong> Comparar efeitos colaterais vs. benefícios duradouros.
+                        <br><br>
+                        <strong>Script:</strong><br>
+                        "Entendo! Remédio da farmácia parece mais seguro mesmo.
+                        <br><br>
+                        Mas vou te fazer uma pergunta: o anti-inflamatório que você toma resolve o problema ou só esconde a dor?
+                        <br><br>
+                        Anti-inflamatórios:
+                        <br>❌ Só mascaram a dor
+                        <br>❌ Fazem mal ao estômago
+                        <br>❌ Podem causar úlcera
+                        <br>❌ Quando para de tomar, dor volta
+                        <br><br>
+                        EVA SKIN:
+                        <br>✅ Regenera a cartilagem (trata a causa)
+                        <br>✅ 100% natural
+                        <br>✅ Sem efeitos colaterais
+                        <br>✅ Melhora duradoura
+                        <br><br>
+                        Imagina não precisar mais tomar remédio todo dia? Seu estômago agradece! 
+                        <br><br>
+                        Você pode continuar tomando seu remédio enquanto testa o EVA SKIN."
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    🎯 LEMBRE-SE: Para produtos articulares, sempre calcule o custo total da dor (remédios + consultas + limitações) vs. o investimento na solução!
+                </div>
+
+                <div class="tip-box">
+                    <strong>Dica de Ouro:</strong> Use depoimentos de pessoas da mesma faixa etária do cliente. "Olha a Dona Maria, de 65 anos como você..." gera muito mais identificação!
+                </div>
+            </div>
+
+            <!-- SEÇÃO FUNIL -->
+            <div id="funil" class="section">
+                <h2 class="section-title">🎯 Funil de Vendas Completo</h2>
+
+                <div class="funnel-container">
+                    <div class="funnel-step">
+                        <h3>📱 ATRAÇÃO (Topo do Funil)</h3>
+                        <p><strong>Objetivo:</strong> Atrair pessoas com dores articulares</p>
+                        <ul>
+                            <li>Posts sobre dores articulares comuns</li>
+                            <li>Dicas de exercícios para articulações</li>
+                            <li>Informações sobre colágeno e envelhecimento</li>
+                            <li>Enquetes sobre dores mais comuns</li>
+                            <li>Conteúdo educativo sobre cartilagens</li>
+                        </ul>
+                        <div class="highlight">🎯 Foco: Identificar a dor e educar sobre soluções</div>
+                    </div>
+
+                    <div class="funnel-step">
+                        <h3>🔍 INTERESSE (Meio do Funil)</h3>
+                        <p><strong>Objetivo:</strong> Despertar interesse na solução</p>
+                        <ul>
+                            <li>Explicação científica dos ingredientes</li>
+                            <li>Depoimentos de transformação</li>
+                            <li>Comparação EVA SKIN vs. anti-inflamatórios</li>
+                            <li>Estudos clínicos e eficácia</li>
+                            <li>Vídeos explicativos sobre como funciona</li>
+                        </ul>
+                        <div class="highlight">🎯 Foco: Credibilidade científica e prova social</div>
+                    </div>
+
+                    <div class="funnel-step">
+                        <h3>🎯 CONSIDERAÇÃO (Fundo do Funil)</h3>
+                        <p><strong>Objetivo:</strong> Preparar para decisão de compra</p>
+                        <ul>
+                            <li>Ofertas especiais e condições de pagamento</li>
+                            <li>Apresentação detalhada dos benefícios</li>
+                            <li>Comparação de preços (custo diário)</li>
+                            <li>Bônus exclusivos</li>
+                            <li>Urgência: degeneração progressiva</li>
+                        </ul>
+                        <div class="highlight">🎯 Foco: Facilitar a decisão e remover riscos</div>
+                    </div>
+
+                    <div class="funnel-step">
+                        <h3>💰 VENDA (Conversão)</h3>
+                        <p><strong>Objetivo:</strong> Fechar a venda</p>
+                        <ul>
+                            <li>Atendimento personalizado focado na dor específica</li>
+                            <li>Quebra de objeções sobre eficácia e preço</li>
+                            <li>Facilitação do pagamento (parcelamento)</li>
+                            <li>Bônus: guias de exercícios</li>
+                            <li>Destaque dos benefícios exclusivos</li>
+                        </ul>
+                        <div class="highlight">🎯 Foco: Segurança e alívio da dor</div>
+                    </div>
+
+                    <div class="funnel-step">
+                        <h3>🤝 FIDELIZAÇÃO (Pós-venda)</h3>
+                        <p><strong>Objetivo:</strong> Acompanhar resultados e gerar indicações</p>
+                        <ul>
+                            <li>Acompanhamento semanal dos resultados</li>
+                            <li>Grupo de apoio para usuários</li>
+                            <li>Dicas de exercícios complementares</li>
+                            <li>Programa de indicação</li>
+                            <li>Oferta de recompra com desconto</li>
+                        </ul>
+                        <div class="highlight">🎯 Foco: Resultados sustentados e indicações</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO SCRIPTS -->
+            <div id="scripts" class="section">
+                <h2 class="section-title">📝 Scripts Avançados</h2>
+
+                <div class="card">
+                    <h3>🎭 Scripts por Idade e Perfil</h3>
+
+                    <h4>👩‍💼 Para Pessoas 40-55 anos (Ativos no trabalho)</h4>
+                    <div class="script-box">
+[NOME], sei que você tem uma vida corrida, trabalha muito...
+
+E as dores articulares estão atrapalhando sua produtividade, né? 😰
+
+Dor no punho de tanto digitar, ombros tensos, joelhos reclamando...
+
+EVA SKIN foi pensado para pessoas como você:
+💊 Só 2 cápsulas por dia - prático
+🏃‍♀️ Mantem você ativo e produtivo
+🧠 Sem efeitos colaterais que atrapalham trabalho
+⚡ Fórmula científica comprovada
+
+Imagina trabalhar sem dor, ter energia para família no fim do dia?
+
+Por R$ 97 (menos de R$ 3,25/dia) você investe na sua qualidade de vida.
+
+Posso te explicar como a fórmula científica funciona? São só 5 minutinhos...
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Script</button>
+
+                    <h4>👵 Para Pessoas 55+ anos (Aposentados/Idosos)</h4>
+                    <div class="script-box">
+Olá [NOME]! 😊
+
+Que idade maravilhosa a sua! Época de aproveitar a vida, né?
+
+Mas sei que as dores articulares podem estar limitando seus planos... 😔
+
+EVA SKIN é perfeito para sua idade porque:
+🦴 Regenera cartilagens que se desgastaram com o tempo
+💧 Lubrifica articulações naturalmente 
+🌿 100% natural, sem riscos
+👵 Milhares de pessoas da sua idade aprovam
+
+Veja o depoimento da Dona Carmen, 68 anos:
+"Voltei a brincar com meus netos no chão! Não sentia tanta alegria há anos!"
+
+Por apenas R$ 97, você pode ter sua liberdade de volta.
+
+Quer que eu te conte como cada ingrediente vai ajudar? 💜
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Script</button>
+
+                    <h4>🏃‍♂️ Para Atletas/Praticantes de Exercício</h4>
+                    <div class="script-box">
+E aí, [NOME]! 💪
+
+Vi que você treina! Que legal! 🏋️‍♀️
+
+Mas me conta: as articulações estão aguentando firme? 
+
+Treino pesado + idade = desgaste articular. É inevitável! 😅
+
+EVA SKIN é o segredo dos atletas masters:
+🏃‍♀️ Regenera cartilagens desgastadas pelo treino
+💧 Lubrifica articulações para movimento fluido
+🔥 Reduz inflamação pós-treino
+⚡ Você treina mais, se machuca menos
+
+O João, 52 anos, voltou a jogar futebol depois de 3 anos parado:
+"EVA SKIN me devolveu as pernas de 30 anos!"
+
+Por R$ 97 você protege seu investimento no treino.
+
+Que tal garantir que vai treinar até os 80? 😉
+
+Posso te explicar a fórmula científica? 🧬
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Script</button>
+                </div>
+
+                <div class="card">
+                    <h3>⚡ Scripts de Urgência e Oferta</h3>
+
+                    <h4>🔥 Promoção Relâmpago</h4>
+                    <div class="script-box">
+🚨 URGENTE [NOME]! 🚨
+
+PROMOÇÃO RELÂMPAGO - EVA SKIN! ⚡
+
+De R$ 147 por apenas R$ 97
++ FRETE GRÁTIS para todo Brasil!
+
+E ainda ganha:
+🎁 Guia "10 Exercícios para Articulações Saudáveis" (R$ 47)
+🎁 Acesso ao Grupo VIP de Suporte (R$ 97)  
+🎁 Acompanhamento personalizado (R$ 197)
+
+Total de bônus: R$ 341
+Você paga apenas: R$ 97
+
+⏰ TERMINA HOJE às 23:59h!
+
+Só restam 12 unidades no estoque...
+
+Imagina acordar amanhã sem dor! 🌅
+
+Não deixe a dor vencer você!
+[LINK DE PAGAMENTO]
+
+Corre que ainda dá tempo! 🏃‍♀️
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Script</button>
+
+                    <h4>⏰ Última Chance</h4>
+                    <div class="script-box">
+[NOME], essa é sua ÚLTIMA CHANCE! ⏰
+
+Há 3 dias te mostrei como EVA SKIN pode acabar com suas dores...
+
+Você disse que ia "pensar"... 🤔
+
+Mas enquanto isso:
+❌ Suas cartilagens continuam se desgastando
+❌ A dor não melhora sozinha  
+❌ Cada dia perdido é movimento perdido
+
+HOJE é o último dia da promoção:
+R$ 97 + frete grátis
+
+Amanhã volta para R$ 147!
+
+Olha, vou ser direta: 
+Daqui 30 dias você pode estar:
+✅ Celebrando uma vida sem dor
+❌ Se arrependendo de não ter tentado
+
+A escolha é SUA! 
+
+Últimas 3 unidades:
+[LINK DE PAGAMENTO]
+
+Não deixe a dor ganhar essa batalha! 💪
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard(this.previousElementSibling)">📋 Copiar Script</button>
+                </div>
+            </div>
+
+            <!-- SEÇÃO DICAS PRO -->
+            <div id="dicas" class="section">
+                <h2 class="section-title">💡 Dicas de Profissional</h2>
+
+                <div class="card glow">
+                    <h3>🎯 Estratégias Específicas para EVA SKIN</h3>
+
+                    <div class="tip-box">
+                        <strong>Foque na DOR ESPECÍFICA:</strong> Sempre pergunte "Qual articulação mais incomoda?" e personalize a abordagem. Joelho = escadas, ombro = carregar peso, punho = digitar.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>Use a IDADE como aliada:</strong> "Aos 50 anos é normal começar..." cria urgência. Mostre que quanto mais espera, pior fica.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>Quebre o VALOR DIÁRIO:</strong> R$ 97 ÷ 30 = R$ 3,25/dia. Sempre compare com café, remédio da farmácia ou consulta médica.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>ANTES/DEPOIS visuais:</strong> Vídeos de pessoas se movimentando, subindo escadas, caminhando. Movimento = prova de eficácia.
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>Use ESTUDOS CIENTÍFICOS:</strong> Mencione que existem estudos clínicos que comprovam a eficácia da composição.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Métricas Importantes para EVA SKIN</h3>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">5-10%</div>
+                            <div class="stat-label">Taxa de Conversão Boa</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">45+</div>
+                            <div class="stat-label">Idade Ideal do Cliente</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Ingredientes Poderosos</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">R$ 97</div>
+                            <div class="stat-label">Investimento em Saúde</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Estratégias Avançadas de Venda</h3>
+                    
+                    <ol style="padding-left: 20px;">
+                        <li style="margin: 15px 0; font-weight: 600;">
+                            <strong>Segmente por idade e dor</strong>
+                            <br><small>40-55 anos: foco na produtividade. 55+: foco na liberdade</small>
+                        </li>
+                        <li style="margin: 15px 0; font-weight: 600;">
+                            <strong>Use sazonalidade</strong>
+                            <br><small>Inverno = mais dor. Verão = quero me mover. Use isso!</small>
+                        </li>
+                        <li style="margin: 15px 0; font-weight: 600;">
+                            <strong>Colete depoimentos específicos</strong>
+                            <br><small>Por idade, sexo e tipo de dor. Quanto mais específico, melhor</small>
+                        </li>
+                        <li style="margin: 15px 0; font-weight: 600;">
+                            <strong>Crie urgência médica</strong>
+                            <br><small>"Cartilagem não regenera sozinha após os 30"</small>
+                        </li>
+                        <li style="margin: 15px 0; font-weight: 600;">
+                            <strong>Acompanhe resultados</strong>
+                            <br><small>Ligue periodicamente. Cliente satisfeito indica mais</small>
+                        </li>
+                        <li style="margin: 15px 0; font-weight: 600;">
+                            <strong>Programa de indicação</strong>
+                            <br><small>Dor articular é comum na família. Use isso!</small>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="highlight">
+                    🏆 Lembre-se: EVA SKIN vende LIBERDADE, não produto. Foque no que a pessoa VAI CONSEGUIR FAZER novamente!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Esconder todas as seções
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Remover classe active de todos os botões
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Mostrar a seção selecionada
+            document.getElementById(sectionId).classList.add('active');
+
+            // Adicionar classe active no botão clicado
+            event.target.classList.add('active');
+
+            // Scroll suave para o topo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function copyToClipboard(element) {
+            const text = element.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                // Feedback visual
+                const button = element.nextElementSibling;
+                const originalText = button.textContent;
+                button.textContent = '✅ Copiado!';
+                button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }, function(err) {
+                console.error('Erro ao copiar: ', err);
+                alert('Erro ao copiar o texto. Tente selecionar manualmente.');
+            });
+        }
+
+        // Adicionar animações aos cards quando entram na viewport
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+                    entry.target.classList.add('floating');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card, .benefit-card, .stat-card');
+            cards.forEach(card => observer.observe(card));
+
+            // Adicionar efeito de digitação no título
+            const title = document.querySelector('.header h1');
+            if (title) {
+                title.style.overflow = 'hidden';
+                title.style.borderRight = '3px solid';
+                title.style.animation = 'typing 3s steps(30) 1s both, blink 1s infinite';
+            }
+        });
+
+        // CSS para efeito de digitação
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes typing {
+                from { width: 0; }
+                to { width: 100%; }
+            }
+            @keyframes blink {
+                0%, 50% { border-color: transparent; }
+                51%, 100% { border-color: white; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        console.log('🦴 Manual de Vendas EVA SKIN carregado!');
+        console.log('💡 Foque na dor específica e liberdade de movimento!');
+        console.log('📈 Sucesso nas suas vendas!');
+    </script>
+</body>
+</html>
